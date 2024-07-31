@@ -32,7 +32,20 @@ class Matrix {
         const result = A.data[0].map((_, i) => A.data.map(row => row[i]));
         return new Matrix(result);
     }
+// Method to get the number of rows
+    getNumberOfRows(): number {
+        return this.data.length;
+    }
 
+    // Method to get the maximum number of columns
+    getMaxNumberOfColumns(): number {
+        return Math.max(...this.data.map(row => row.length));
+    }
+
+    // Method to display the matrix
+    display() {
+        this.data.forEach(row => console.log(row.join(' ')));
+    }
     // Method to display the matrix
     display() {
         this.data.forEach(row => console.log(row.join(' ')));
